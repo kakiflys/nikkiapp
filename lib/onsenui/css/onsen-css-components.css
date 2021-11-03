@@ -33,6 +33,83 @@
  * limitations under the License.
  *
  */
+ .absof{
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 430px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.abso{
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 80px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.bun2{
+  margin-left: 50px;
+  margin-right: 50px;
+font-family:  'Yomogi', cursive;
+color:#4b4b4b;
+  font-size: 20px;
+font-weight: bold;
+}
+.bun{
+  margin-left: 50px;
+  margin-right: 50px;
+font-family:  'Yomogi', cursive;
+  font-size: 20px;
+font-weight: bold;
+}
+
+
+ .fade{
+        animation: fadeIn 5.2s ease 0.0s 1 normal;
+    }
+    @keyframes fadeIn { /*animation-nameで設定した値を書く*/
+        0% {opacity: 0} /*アニメーション開始時は不透明度0%*/
+        100% {opacity: 1} /*アニメーション終了時は不透明度100%*/
+    }
+    div.desk{
+      background-repeat: no-repeat;
+      background-size: 100%;
+ background-position: center;
+background-image:url(../image/desk.gif);
+ height:100%;
+ width:100%;
+    }
+  div.mybox{
+background-repeat: no-repeat;
+      background-size: 100%;
+ background-position: center;
+background-image:url(../image/box0.png);
+ height:100%;
+ width:100%;
+
+  }
+ div.box{
+    background-color:rgb(184, 144, 98);
+    width:100%;
+    height:100%;
+}
+div.leaf{
+  background-size: 100%;
+ background-position: center;
+    background-image:url(../image/leaf.png);
+    width:100%;
+    height:100%;
+}
+.leaf2{
+  position:relative;
+  background-size: 100%;
+ background-position: center;
+    width:100%;
+    height:100%;
+}
+
+
 :root {
   /* variables for iOS components */
 
@@ -45,6 +122,8 @@ html {
   width: 100%;
 }
 body {
+  /*display: none;
+  */
   position: absolute;
   overflow: hidden;
   top: 0;
@@ -107,7 +186,7 @@ h4, h5, h6 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
-  background-color: #efeff400;
+  background-color: #1b1bff;
   position: absolute;
   top: 0;
   left: 0;
@@ -123,7 +202,7 @@ h4, h5, h6 {
   display: none;
 }
 .page__content {
-  background-color: #efeff400;
+  background-color: #59ff38;
   position: absolute;
   top: 0;
   left: 0;
@@ -132,16 +211,21 @@ h4, h5, h6 {
   box-sizing: border-box;
 }
 .page__background {
-  background-size: cover;
-  background-image:url(../image/koto_bg.png);
-  
-  
-  
+ 
+  background-size: 100%;
+ background-position: center;
+ background-color: rgb(30, 200, 120);
+  /*background-image:url(../image/treeg.gif);
+ */
+  background-repeat: no-repeat;
   position: absolute;
+  
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+
+
   
   box-sizing: border-box;
   
@@ -150,9 +234,9 @@ h4, h5, h6 {
   font-family: 'Roboto', 'Noto', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
-  background-color: #a38a1c;
+  background-color: #d42c2c;
 }
-.page--material__content {ß
+.page--material__content {
   font-family: 'Roboto', 'Noto', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
@@ -201,7 +285,7 @@ h4, h5, h6 {
   font-size: 20px;
 }
 .page--material__background {
-  background-color: #eceff1;
+  background-color: #39b0ff;
 }
 :root { /* background color active */
 }
@@ -766,6 +850,7 @@ h4, h5, h6 {
     </div>
 */
 .toolbar {
+  position: relative;
   font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -3374,10 +3459,15 @@ h4, h5, h6 {
     </ul>
 */
 .list {
+  position:relative;
   padding: 0;
   margin: 0;
+  margin-top:20px;
+  margin-right:50px;
+  margin-left:50px;
   font: inherit;
-  color: inherit;
+  color: #ffffff;
+  font-weight: bold; 
   background: transparent;
   line-height: normal;
   cursor: default;
@@ -3388,30 +3478,36 @@ h4, h5, h6 {
           user-select: none;
   font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
   font-family:  'Yomogi', cursive;
-  font-size: 30px;
+  font-size: 20px;
   
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
+  /*font-weight: 400;
+  */
   list-style-type: none;
-  text-align: left;
+  text-align: center;
   display: block;
   -webkit-overflow-scrolling: touch;
   overflow: hidden;
   background-image:
     linear-gradient(rgba(204, 204, 204, 0), rgba(204, 204, 204, 0)),
     linear-gradient(rgba(204, 204, 204, 0), rgba(204, 204, 204, 0));
-  background-size: 100% 1px, 100% 1px;
+    
+    
+  background-size: 70% 1px, 70% 1px;
   background-repeat: no-repeat;
   background-position: bottom, top;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(221, 221, 221, 0);
   background-color: rgba(253, 255, 158, 0);
+  
 }
+
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .list {
     background-image:
-      linear-gradient(0deg, #ccc, #ccc 50%, transparent 50%),
-      linear-gradient(180deg, #ccc, #ccc 50%, transparent 50%);
+      linear-gradient(0deg, rgba(204, 204, 204, 0), rgba(204, 204, 204, 0) 50%, transparent 50%),
+      linear-gradient(180deg, rgba(204, 204, 204, 0), rgba(204, 204, 204, 0) 50%, transparent 50%);
+      
   }
 }
 .list-item {
@@ -3435,7 +3531,7 @@ h4, h5, h6 {
           align-items: center;
   padding: 0 0 0 14px;
   margin: 0 0 -1px 0;
-  color: #424242;
+  color: #ffffff;
   transition: background-color 0.2s linear;
 }
 /*~
@@ -4603,36 +4699,36 @@ h4, h5, h6 {
   pointer-events: none;
 }
 .text-input::-webkit-input-placeholder {
-  color: #999;
+  color: rgb(255, 255, 255);
 }
 .text-input:-ms-input-placeholder {
-  color: #999;
+  color: rgb(255, 255, 255);
 }
 .text-input::-ms-input-placeholder {
-  color: #999;
+  color: rgb(255, 254, 254);
 }
 .text-input::placeholder {
-  color: #999;
+  color: rgb(255, 255, 255);
 }
 .text-input:disabled::-webkit-input-placeholder {
   border: none;
   background-color: transparent;
-  color: #999;
+  color: rgb(255, 255, 255);
 }
 .text-input:disabled:-ms-input-placeholder {
   border: none;
   background-color: transparent;
-  color: #999;
+  color: rgb(255, 255, 255);
 }
 .text-input:disabled::-ms-input-placeholder {
   border: none;
   background-color: transparent;
-  color: #999;
+  color: rgb(255, 255, 255);
 }
 .text-input:disabled::placeholder {
   border: none;
   background-color: transparent;
-  color: #999;
+  color: rgb(255, 255, 255);
 }
 .text-input:invalid {
   border: none;
@@ -4773,7 +4869,7 @@ h4, h5, h6 {
   font-family: 'Roboto', 'Noto', sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
-  color: #afafaf;
+  color: #ffffff;
   position: absolute;
   left: 0;
   top: 2px;
@@ -4799,19 +4895,19 @@ h4, h5, h6 {
           animation: material-text-input-animate 0.3s forwards;
 }
 .text-input--material::-webkit-input-placeholder {
-  color: #afafaf;
+  color: #ffffff;
   line-height: 20px;
 }
 .text-input--material:-ms-input-placeholder {
-  color: #afafaf;
+  color: #ffffff;
   line-height: 20px;
 }
 .text-input--material::-ms-input-placeholder {
-  color: #afafaf;
+  color: #ffffff;
   line-height: 20px;
 }
 .text-input--material::placeholder {
-  color: #afafaf;
+  color: #ffffff;
   line-height: 20px;
 }
 @-webkit-keyframes material-text-input-animate {
@@ -4839,6 +4935,11 @@ h4, h5, h6 {
     <textarea class="textarea" rows="3" placeholder="Textarea"></textarea>
 */
 .textarea {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  position: absolute;
+  text-align:center;
   box-sizing: border-box;
   background-clip: padding-box;
   padding: 0;
@@ -4861,7 +4962,7 @@ h4, h5, h6 {
   border-radius: 4px;
   border: 1px solid #ccc;
   background-color: #efeff4;
-  color: #1f1f21;
+  color: #ffffff;
   letter-spacing: 0;
   box-shadow: none;
   -webkit-appearance: none;
@@ -4875,16 +4976,16 @@ h4, h5, h6 {
   pointer-events: none;
 }
 .textarea::-webkit-input-placeholder {
-  color: #999;
+  color: rgb(238, 238, 238);
 }
 .textarea:-ms-input-placeholder {
-  color: #999;
+  color: rgb(255, 255, 255);
 }
 .textarea::-ms-input-placeholder {
-  color: #999;
+  color: rgb(255, 255, 255);
 }
 .textarea::placeholder {
-  color: #999;
+  color: rgb(255, 255, 255);
 }
 /*~
   name: Textarea Transparent
@@ -4899,13 +5000,12 @@ h4, h5, h6 {
   margin: 0;
   font: inherit;
   color: inherit;
-  background: transparent;
+  background: green;
   border: none;
   line-height: normal;
-  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  font-family:  'Yomogi', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
   vertical-align: top;
   resize: none;
   outline: none;
@@ -4913,11 +5013,15 @@ h4, h5, h6 {
   padding-left: 0;
   padding-right: 0;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: bold; 
   border-radius: 4px;
   border: none;
-  background-color: transparent;
-  color: #1f1f21;
+  background-size: 100%;
+ background-position: center;
+  background-color: rgba(0, 128, 0, 0);
+  /*background-image:url(../image/leaf.png);
+  */
+  color: #ffffff;
   letter-spacing: 0;
   box-shadow: none;
   -webkit-appearance: none;
@@ -4931,16 +5035,16 @@ h4, h5, h6 {
   pointer-events: none;
 }
 .textarea--transparent::-webkit-input-placeholder {
-  color: #999;
+  color: rgb(255, 255, 255);
 }
 .textarea--transparent:-ms-input-placeholder {
-  color: #999;
+  color: rgb(230, 230, 230);
 }
 .textarea--transparent::-ms-input-placeholder {
-  color: #999;
+  color: rgb(238, 238, 238);
 }
 .textarea--transparent::placeholder {
-  color: #999;
+  color: rgb(212, 207, 185);
 }
 /*~
   name: Dialog

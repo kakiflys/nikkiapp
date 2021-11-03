@@ -1,19 +1,20 @@
 <ons-page>
-  <div style="background: url(../lib/onsenui/image/koto_bg.png);">
+ <div class="desk"></div>
+ 
   <ons-navigator id="formNav">
     
     <ons-toolbar>
       <div class="center" id="form-title"></div>
     </ons-toolbar>
-    <div style="text-align: center; margin-top: 60px;">
-      <h3>日記登録</h3>
+    <div style="text-align: center; margin-top: 150px;">
+      <h3>イイコト登録</h3>
       
- <!--
+ 
       <p>
         <ons-input id="day" modifier="underbar" type="date" float></ons-input>
       </p>
       <p>
-       
+       <!--
         <ons-select id="category" onchange="editSelects(event)">
     <option value="ure">嬉しいこと</option>
     <option value="kana">悲しいこと</option>
@@ -22,11 +23,18 @@
  
         </p>
          -->
+         <p style="margin-top: 260px;" class = "absof">
+          <img src="lib/onsenui/image/leaf.png" alt="ロゴ" width="115%" height="80%">
+         </p>
       <p>
-        <textarea id="report" class="textarea textarea--transparent" rows="10" placeholder="今日の日記を書きましょう"></textarea>
+        <textarea id="report" class="textarea textarea--transparent" rows="10" placeholder="今日のイイコトを書きましょう(30文字以内)" maxlength="30"></textarea>
       </p>
-      <p style="margin-top: 30px;">
-        <ons-button id="send-report">日記を登録する</ons-button>
+      <p style="margin-top: 110px;">
+        ※登録した内容はユーザー全員に公開されます。<br>
+        個人を特定できる内容や誹謗中傷を含む内容は書き込まないでください。
+      </p>
+      <p style="margin-top: 60px;">
+        <ons-button id="send-report">イイコトを登録する</ons-button>
       </p>
       <p style="margin-top: 100px;">
       <a href="#" id="logoutButton">ログアウトする</a>
@@ -34,7 +42,7 @@
     </div>
     
   </ons-navigator>
-  </div>
+  
   <head>
     <script src="js/app.js"></script>
     
@@ -57,13 +65,13 @@ $(function() {
 //   編集は本人のみ
         const acl = new ncmb.Acl();
         const user = ncmb.User.getCurrentUser();
-        const category =$('[id=category] option:selected').text();
+        //const category =$('[id=category] option:selected').text();
         
 acl
   .setPublicReadAccess(true)
   .setUserWriteAccess(user, true);
 report
-  .set('category', category)
+  //.set('category', category)
   .set('day', date)
   .set('report', $('#report').val())
   .set('user', user)
@@ -77,9 +85,9 @@ const message = method === 'save' ? '作成' : '更新';
 // 新規作成または更新を実行
 try {
   await report[method]();
-  ons.notification.alert(`日記の${message}に成功しました`);
+  ons.notification.alert(`イイコトの${message}に成功しました`);
 } catch (e) {
-  ons.notification.alert(`日記の${message}に失敗しました`);
+  ons.notification.alert(`イイコトの${message}に失敗しました`);
 }
       });
       const user = ncmb.User.getCurrentUser(); // ここを書き換えます
@@ -107,10 +115,11 @@ try {
   const report = await Report
     .equalTo('userName', user.get('userName'))
     .equalTo('day', date)
-    .equalTo('category',category)
+    //.equalTo('category',category)
     .fetch();
   return report.objectId ? report : new Report();
 }
+
 ons.getScriptPage().onShow = async function() {
   $('#form-title').html('日記を書く');
   const date = new Date(dayjs().format('YYYY-MM-DD'));

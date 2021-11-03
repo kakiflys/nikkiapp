@@ -1,5 +1,7 @@
 <ons-page>
-  <div style="text-align: center; margin-top: 60px;">
+  <div class="box"></div>
+  <ons-navigator id="f">
+  <div style="text-align: center; margin-top: 150px;">
     
     <p>
       <ons-input id="userName" modifier="underbar" placeholder="ユーザ名" float></ons-input>
@@ -11,7 +13,7 @@
       <ons-button id="login">登録/ログイン</ons-button>
     </p>
   </div>
-  
+   </ons-navigator>
   <head>
     
     <script src="js/app.js"></script>
@@ -73,4 +75,5 @@
   await user.set('acl', acl).update();
     }
   </script>
+   
 </ons-page>
