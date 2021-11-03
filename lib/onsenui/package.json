@@ -1,16 +1,11 @@
-
 {
-  
   "name": "onsenui",
   "version": "2.10.10",
   "description": "HTML5 Mobile Framework & UI Components",
   "private": false,
   "scripts": {
-  "monaca:preview": "npm run dev",
-  "dev": "browser-sync start --no-open -s www/ --watch --port 8080 --ui-port 8081",
-  "deploy": "gh-pages -d www",
     "build": "(cd bindings/angular1 && yarn install) && gulp build",
-    
+    "dev": "gulp serve --css --core",
     "test": "gulp test --disable-warnings",
     "test:skip-build": "gulp test --disable-warnings --skip-build"
   },

@@ -22,11 +22,6 @@ function start(){
 window.location.href = 'index2.html';
 //location.reload();
 }
-function starts(){
-  
-window.location.href = 'setsumei.html';
-//location.reload();
-}
 function mp4Click() {
   return $('#moNav')[0].pushPage('report.html');
  

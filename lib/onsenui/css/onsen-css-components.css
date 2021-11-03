@@ -33,62 +33,6 @@
  * limitations under the License.
  *
  */
- .absof{
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 430px;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  z-index: 1;
-}
-.abso{
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 80px;
-  margin-left: 50%;
-  transform: translateX(-50%);
-}
-.bun2{
-  margin-left: 50px;
-  margin-right: 50px;
-font-family:  'Yomogi', cursive;
-color:#4b4b4b;
-  font-size: 20px;
-font-weight: bold;
-}
-.bun{
-  margin-left: 50px;
-  margin-right: 50px;
-font-family:  'Yomogi', cursive;
-  font-size: 20px;
-font-weight: bold;
-}
-
-
- .fade{
-        animation: fadeIn 5.2s ease 0.0s 1 normal;
-    }
-    @keyframes fadeIn { /*animation-nameで設定した値を書く*/
-        0% {opacity: 0} /*アニメーション開始時は不透明度0%*/
-        100% {opacity: 1} /*アニメーション終了時は不透明度100%*/
-    }
-    div.desk{
-      background-repeat: no-repeat;
-      background-size: 100%;
- background-position: center;
-background-image:url(../image/desk.gif);
- height:100%;
- width:100%;
-    }
-  div.mybox{
-background-repeat: no-repeat;
-      background-size: 100%;
- background-position: center;
-background-image:url(../image/box0.png);
- height:100%;
- width:100%;
-
-  }
  div.box{
     background-color:rgb(184, 144, 98);
     width:100%;
@@ -101,14 +45,6 @@ div.leaf{
     width:100%;
     height:100%;
 }
-.leaf2{
-  position:relative;
-  background-size: 100%;
- background-position: center;
-    width:100%;
-    height:100%;
-}
-
 
 :root {
   /* variables for iOS components */
@@ -122,8 +58,6 @@ html {
   width: 100%;
 }
 body {
-  /*display: none;
-  */
   position: absolute;
   overflow: hidden;
   top: 0;
@@ -215,8 +149,8 @@ h4, h5, h6 {
   background-size: 100%;
  background-position: center;
  background-color: rgb(30, 200, 120);
-  /*background-image:url(../image/treeg.gif);
- */
+  background-image:url(../image/treeg.gif);
+ 
   background-repeat: no-repeat;
   position: absolute;
   
@@ -850,7 +784,6 @@ h4, h5, h6 {
     </div>
 */
 .toolbar {
-  position: relative;
   font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -3459,15 +3392,10 @@ h4, h5, h6 {
     </ul>
 */
 .list {
-  position:relative;
   padding: 0;
   margin: 0;
-  margin-top:20px;
-  margin-right:50px;
-  margin-left:50px;
   font: inherit;
-  color: #ffffff;
-  font-weight: bold; 
+  color: inherit;
   background: transparent;
   line-height: normal;
   cursor: default;
@@ -3478,36 +3406,30 @@ h4, h5, h6 {
           user-select: none;
   font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
   font-family:  'Yomogi', cursive;
-  font-size: 20px;
+  font-size: 30px;
   
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /*font-weight: 400;
-  */
+  font-weight: 400;
   list-style-type: none;
-  text-align: center;
+  text-align: left;
   display: block;
   -webkit-overflow-scrolling: touch;
   overflow: hidden;
   background-image:
     linear-gradient(rgba(204, 204, 204, 0), rgba(204, 204, 204, 0)),
     linear-gradient(rgba(204, 204, 204, 0), rgba(204, 204, 204, 0));
-    
-    
-  background-size: 70% 1px, 70% 1px;
+  background-size: 100% 1px, 100% 1px;
   background-repeat: no-repeat;
   background-position: bottom, top;
   border: 1px solid rgba(221, 221, 221, 0);
   background-color: rgba(253, 255, 158, 0);
-  
 }
-
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .list {
     background-image:
       linear-gradient(0deg, rgba(204, 204, 204, 0), rgba(204, 204, 204, 0) 50%, transparent 50%),
       linear-gradient(180deg, rgba(204, 204, 204, 0), rgba(204, 204, 204, 0) 50%, transparent 50%);
-      
   }
 }
 .list-item {
@@ -3531,7 +3453,7 @@ h4, h5, h6 {
           align-items: center;
   padding: 0 0 0 14px;
   margin: 0 0 -1px 0;
-  color: #ffffff;
+  color: #424242;
   transition: background-color 0.2s linear;
 }
 /*~
@@ -4935,10 +4857,6 @@ h4, h5, h6 {
     <textarea class="textarea" rows="3" placeholder="Textarea"></textarea>
 */
 .textarea {
-  margin-left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  position: absolute;
   text-align:center;
   box-sizing: border-box;
   background-clip: padding-box;
@@ -4962,7 +4880,7 @@ h4, h5, h6 {
   border-radius: 4px;
   border: 1px solid #ccc;
   background-color: #efeff4;
-  color: #ffffff;
+  color: #1f1f21;
   letter-spacing: 0;
   box-shadow: none;
   -webkit-appearance: none;
@@ -4976,16 +4894,16 @@ h4, h5, h6 {
   pointer-events: none;
 }
 .textarea::-webkit-input-placeholder {
-  color: rgb(238, 238, 238);
+  color: #999;
 }
 .textarea:-ms-input-placeholder {
-  color: rgb(255, 255, 255);
+  color: #999;
 }
 .textarea::-ms-input-placeholder {
-  color: rgb(255, 255, 255);
+  color: #999;
 }
 .textarea::placeholder {
-  color: rgb(255, 255, 255);
+  color: #999;
 }
 /*~
   name: Textarea Transparent
@@ -5003,9 +4921,10 @@ h4, h5, h6 {
   background: green;
   border: none;
   line-height: normal;
-  font-family:  'Yomogi', cursive;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
   vertical-align: top;
   resize: none;
   outline: none;
@@ -5013,15 +4932,14 @@ h4, h5, h6 {
   padding-left: 0;
   padding-right: 0;
   font-size: 16px;
-  font-weight: bold; 
+  font-weight: 400;
   border-radius: 4px;
   border: none;
   background-size: 100%;
  background-position: center;
   background-color: rgba(0, 128, 0, 0);
-  /*background-image:url(../image/leaf.png);
-  */
-  color: #ffffff;
+  background-image:url(../image/leaf.png);
+  color: #1f1f21;
   letter-spacing: 0;
   box-shadow: none;
   -webkit-appearance: none;
@@ -5035,16 +4953,16 @@ h4, h5, h6 {
   pointer-events: none;
 }
 .textarea--transparent::-webkit-input-placeholder {
-  color: rgb(255, 255, 255);
+  color: #999;
 }
 .textarea--transparent:-ms-input-placeholder {
-  color: rgb(230, 230, 230);
+  color: #999;
 }
 .textarea--transparent::-ms-input-placeholder {
-  color: rgb(238, 238, 238);
+  color: #999;
 }
 .textarea--transparent::placeholder {
-  color: rgb(212, 207, 185);
+  color: #999;
 }
 /*~
   name: Dialog
