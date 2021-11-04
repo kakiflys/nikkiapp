@@ -1,6 +1,8 @@
 <ons-page>
+  <div class = "tree">
+  <ons-navigator id="formNav0">
   <ons-toolbar>
-    <div class="center" id="form-title">みんなの日記</div>
+    <div class="center" id="form-title">みんなのイイコト</div>
   </ons-toolbar>
   <div style="text-align: center; margin-top: 60px;">
     <!--
@@ -8,7 +10,7 @@
     <p>
       <ons-input id="date" modifier="underbar" type="date" float></ons-input>
     </p>
-    -->
+    
     <p>
       <ons-select id="cate" onchange="editSelects(event)">
     <option value="ure">嬉しいこと</option>
@@ -16,14 +18,16 @@
     <option value="tano">楽しみなこと</option>
   </ons-select>
       </p>
+      -->
     <p style="margin-top: 30px;">
-      <ons-button id="view-report">日記を閲覧する</ons-button>
+      <ons-button id="view-report">誰かのイイコトを見てみる</ons-button>
     </p>
     <ons-list id="reports">
     </ons-list>
     
   </div>
-  
+  </ons-navigator>
+  </div>
   <script>
     ons.getScriptPage().onInit = async function() {
       // 日報を閲覧するボタンを押した時の処理
@@ -47,7 +51,7 @@
     async function fetchReports(category) {
 const Report = ncmb.DataStore('Report');
   return await Report
-    .equalTo('category',category)
+    //.equalTo('category',category)
     //.equalTo('day', day)
     .include('user')
     .fetchAll();
@@ -57,17 +61,21 @@ const Report = ncmb.DataStore('Report');
     // 日報の表示処理
     function viewReports(reports) {
       const html = [];
+      const htmlc = [];
       //html.push(`<ons-list-header>${dayjs(day).format('YYYY年MM月DD日の日報')}</ons-list-header>`)
       reports.forEach(report => {
         html.push(`
-           
-            <div class="expandable-content">
               ${report.get('report').replace(/\n/g, '<br />')}
-            </div>
-          
+           
         `)
       });
-      $('#reports').html(html.join(''));
+      htmlc.push(`
+          ${html[ Math.floor( Math.random() * html.length ) ]}
+        `)
+
+      $('#reports').html(htmlc.join(''));
+      console.log(html);
+      console.log(reports);
     }
   </script>
 </ons-page>
