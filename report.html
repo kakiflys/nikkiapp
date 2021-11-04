@@ -19,11 +19,27 @@
   </ons-select>
       </p>
       -->
-    <p style="margin-top: 30px;">
-      <ons-button id="view-report">誰かのイイコトを見てみる</ons-button>
-    </p>
-    <ons-list id="reports">
+      <div style="text-align: center; margin-top: 100px;"></div>
+      <div class="numte">
+      <p>
+        集まったイイコトの数
+      </p>
+      <div id="reportcount">
+      </div>
+      </div>
+      
+      </p>
+      <div class="leaf">
+   <img src="lib/onsenui/image/leaf.png"  width="70%" height="70%">
+ </div>
+ <div style="text-align: center; margin-top: 50px;"></div>
+ <div class="replet">
+ <ons-list id="reports">
     </ons-list>
+ </div>
+ <div class="lebot">
+      <ons-button id="view-report">誰かのイイコトを見てみる</ons-button>
+ </div>
     
   </div>
   </ons-navigator>
@@ -41,6 +57,48 @@
         viewReports(reports);
       })
     }
+    var GameScore = ncmb.DataStore("Report");
+GameScore
+         .count()
+         .fetchAll()
+         .then(function(results){
+            console.log(results.count); // 検索結果の件数を表示
+            var str = results.count;
+      document.getElementById('reportcount').innerHTML = str ;
+
+      if(results.count>=0 && results.count<10){
+        $('.tree').css({
+        backgroundImage: 'url(lib/onsenui/image/01.gif)' 
+    });
+      }else if(results.count>=10 && results.count<20){
+        $('.tree').css({
+        backgroundImage: 'url(lib/onsenui/image/02.gif)' 
+    });
+      }else if(results.count>=20 && results.count<30){
+        $('.tree').css({
+        backgroundImage: 'url(lib/onsenui/image/03.gif)' 
+    });
+      }else if(results.count>=30 && results.count<40){
+        $('.tree').css({
+        backgroundImage: 'url(lib/onsenui/image/04.gif)' 
+    });
+      }else if(results.count>=40 && results.count<50){
+        $('.tree').css({
+        backgroundImage: 'url(lib/onsenui/image/05.gif)' 
+    });
+      }else if(results.count>=50 && results.count<60){
+        $('.tree').css({
+        backgroundImage: 'url(lib/onsenui/image/06.gif)' 
+    });
+      }
+
+          })
+         .catch(function(err){
+            console.log(err);
+          });
+           
+      
+    
 /*
     ons.getScriptPage().onShow = async function() {
       $('#date').val(dayjs().format('YYYY-MM-DD'));

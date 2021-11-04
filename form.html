@@ -6,12 +6,18 @@
       <div class="center" id="form-title"></div>
     </ons-toolbar>
     <div style="text-align: center; margin-top: 60px;">
-      <h3>イイコトを投稿</h3>
-      
- <!--
+      <div class="numte">
+      イイコトを投稿
+      </div>
       <p>
         <ons-input id="day" modifier="underbar" type="date" float></ons-input>
       </p>
+      <div class="leaf2">
+       <p>
+   <img src="lib/onsenui/image/leaf.png" alt="ロゴ" width="70%" height="70%">
+ </p>
+      </div>
+      <!--
       <p>
        
         <ons-select id="category" onchange="editSelects(event)">
@@ -22,15 +28,20 @@
  
         </p>
          -->
-      <p>
+        <div class="replet2">
+      <p style="margin-top: 30px;"></p>
         <textarea id="report" class="textarea textarea--transparent" rows="10" maxlength="30" placeholder="今日あったイイコトを書きましょう（30文字以内）"></textarea>
-      </p>
-      <p style="margin-top: 30px;">
+      
+        </div>
+        <div class="toukou">
+      <p style="margin-top: 0px;">
         <ons-button id="send-report">投稿する</ons-button>
       </p>
+        
       <p style="margin-top: 100px;">
       <a href="#" id="logoutButton">ログアウトする</a>
       </p>
+      </div>
     </div>
     
   </ons-navigator>
@@ -57,13 +68,13 @@ $(function() {
 //   編集は本人のみ
         const acl = new ncmb.Acl();
         const user = ncmb.User.getCurrentUser();
-        const category =$('[id=category] option:selected').text();
+        //const category =$('[id=category] option:selected').text();
         
 acl
   .setPublicReadAccess(true)
   .setUserWriteAccess(user, true);
 report
-  .set('category', category)
+  //.set('category', category)
   .set('day', date)
   .set('report', $('#report').val())
   .set('user', user)
@@ -107,7 +118,7 @@ try {
   const report = await Report
     .equalTo('userName', user.get('userName'))
     .equalTo('day', date)
-    .equalTo('category',category)
+    //.equalTo('category',category)
     .fetch();
   return report.objectId ? report : new Report();
 }

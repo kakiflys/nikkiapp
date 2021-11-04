@@ -22,10 +22,10 @@
 -->
       
     <p style="margin-top: 30px;">
-      <ons-button id="view-reportm">日記を閲覧する</ons-button>
+      <ons-button  id="view-reportm">自分のイイコトを確認</ons-button>
     </p>
-    <ons-list id="reportsm">
-    </ons-list>
+    <ons-list2 class="font" id="reportsm">
+    </ons-list2>
   </div>
   </div>
    </ons-navigator>
@@ -50,6 +50,55 @@
 
     }
 */
+var GameScore2 = ncmb.DataStore("Report");
+const usermy = ncmb.User.getCurrentUser();
+GameScore2.equalTo('userName',usermy.get('userName'))
+         .count()
+         .fetchAll()
+         .then(function(results2){
+            console.log(results2.count); // 検索結果の件数を表示
+            var str2 = results2.count;
+      //document.getElementById('reportcount').innerHTML = str2 ;
+
+      if(results2.count>=0 && results2.count<1){
+        $('.box').css({
+        backgroundImage: 'url(lib/onsenui/image/box0.png)' 
+    });
+      }else if(results2.count>=1 && results2.count<2){
+        $('.box').css({
+        backgroundImage: 'url(lib/onsenui/image/box1.png)' 
+    });
+      }else if(results2.count>=2 && results2.count<3){
+        $('.box').css({
+        backgroundImage: 'url(lib/onsenui/image/box2.png)' 
+    });
+      }else if(results2.count>=3 && results2.count<4){
+        $('.box').css({
+        backgroundImage: 'url(lib/onsenui/image/box3.png)' 
+    });
+      }else if(results2.count>=4 && results2.count<5){
+        $('.box').css({
+        backgroundImage: 'url(lib/onsenui/image/box4.png)' 
+    });
+      }else if(results2.count>=5 && results2.count<6){
+        $('.box').css({
+        backgroundImage: 'url(lib/onsenui/image/box5.png)' 
+    });
+      }else if(results2.count>=6 && results2.count<7){
+        $('.box').css({
+        backgroundImage: 'url(lib/onsenui/image/box6.png)' 
+    });
+      }else if(results2.count>=7){
+        $('.box').css({
+        backgroundImage: 'url(lib/onsenui/image/box7.png)' 
+    });
+      }
+
+          })
+         .catch(function(err){
+            console.log(err);
+          });
+          
     // 日報の取得
   async function fetchReportsm() {
       const usermy = ncmb.User.getCurrentUser();

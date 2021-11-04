@@ -33,11 +33,72 @@
  * limitations under the License.
  *
  */
-div.desk{
-  background-size: cover;
-  background-image: url(../image/desk.gif);
-  height: 100vh;
+ .font{
+font-family:  'Yomogi', cursive;
+ }
 
+ .numte{
+   font-family:  'Yomogi', cursive;
+  font-size: 18px;
+  font-weight: bold;
+ }
+.leaf{
+position:absolute;
+left:0;
+    right:0;
+    top: 45%;
+   
+    margin:auto;
+ }
+ .leaf2{
+   width:90%;
+position:absolute;
+left:0;
+    right:0;
+    top: 30%;
+    bottom:50%;
+    margin:auto;
+ }
+ .replet{
+position:absolute;
+left:0;
+    right:0;
+    top: 49%;
+    bottom:50%;
+    margin:auto;
+ }
+ .replet2{
+position:absolute;
+left:0;
+    right:0;
+    top: 30%;
+    bottom:50%;
+    margin:auto;
+ }
+ .toukou{
+position:absolute;
+left:0;
+    right:0;
+    top: 70%;
+    bottom:50%;
+    margin:auto;
+ }
+ .lebot{
+position:absolute;
+left:0;
+    right:0;
+    top: 90%;
+    bottom:50%;
+    margin:auto;
+ }
+
+div.desk{
+   background-position: center;
+  background-size: contain;
+  background-image: url(../image/desk.gif);
+  height: 100%;
+  background-repeat: no-repeat;
+z-index: 1;
 }
 div.box{
   background-position: center;
@@ -48,7 +109,7 @@ div.box{
 z-index: 1;
 }
 div.tree{
-  background-image: url(../image/02.gif);
+  background-image: url(../image/01.gif);
   height: 100%;
   background-repeat: no-repeat;
   width: 100%;
@@ -3398,24 +3459,60 @@ h4, h5, h6 {
   padding: 0;
   margin: 0;
   font: inherit;
-  color: inherit;
+  color: #ffffff;
   background: transparent;
   line-height: normal;
   cursor: default;
-  
+  margin-left: 80px;
+  margin-right: 80px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
   font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
   font-family:  'Yomogi', cursive;
-  font-size: 30px;
+  font-size: 18px;
   
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
+  font-weight: bold;
   list-style-type: none;
-  text-align: left;
+  text-align:center top;
+  display: block;
+  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
+  background-image:
+    linear-gradient(rgba(204, 204, 204, 0), rgba(204, 204, 204, 0)),
+    linear-gradient(rgba(204, 204, 204, 0), rgba(204, 204, 204, 0));
+  background-size: 100% 1px, 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom, top;
+  border: 1px solid rgba(221, 221, 221, 0);
+  background-color: rgba(253, 255, 158, 0);
+}
+.list2 {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: #333232;
+  background: transparent;
+  line-height: normal;
+  cursor: default;
+  margin-left: 80px;
+  margin-right: 80px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-family: -apple-system, 'Helvetica Neue', 'Helvetica', 'Arial', 'Lucida Grande', sans-serif;
+  font-family:  'Yomogi', cursive;
+  font-size: 18px;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: bold;
+  list-style-type: none;
+  text-align:center top;
   display: block;
   -webkit-overflow-scrolling: touch;
   overflow: hidden;
@@ -3456,7 +3553,7 @@ h4, h5, h6 {
           align-items: center;
   padding: 0 0 0 14px;
   margin: 0 0 -1px 0;
-  color: #424242;
+  color: #ffffff;
   transition: background-color 0.2s linear;
 }
 /*~
@@ -3633,7 +3730,7 @@ h4, h5, h6 {
   padding: 0 0 0 15px;
   font-size: 12px;
   font-weight: 500;
-  color: #1f1f21;
+  color: #f3f3f3;
   min-height: 24px;
   line-height: 25px;
   text-transform: uppercase;
