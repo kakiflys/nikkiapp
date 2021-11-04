@@ -41,18 +41,19 @@ div.desk{
 }
 div.box{
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-image: url(../image/box0.png);
-  height: 100vh;
+  height: 100%;
+  background-repeat: no-repeat;
 z-index: 1;
 }
 div.tree{
-  background-position: center;
-  background-size: contain;
   background-image: url(../image/01.gif);
-  height: 100vh;
+  height: 100%;
   background-repeat: no-repeat;
   width: 100%;
+  background-size: contain;
+  background-position: center;
 z-index: 1;
 }
 
