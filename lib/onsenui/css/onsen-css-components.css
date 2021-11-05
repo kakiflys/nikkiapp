@@ -4981,6 +4981,7 @@ h4, h5, h6 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
+  font-family:  'Yomogi', cursive;
   vertical-align: top;
   resize: none;
   outline: none;
@@ -4990,7 +4991,7 @@ h4, h5, h6 {
   border-radius: 4px;
   border: 1px solid #ccc;
   background-color: #efeff4;
-  color: #1f1f21;
+  color: #ffffff;
   letter-spacing: 0;
   box-shadow: none;
   -webkit-appearance: none;
@@ -5004,16 +5005,16 @@ h4, h5, h6 {
   pointer-events: none;
 }
 .textarea::-webkit-input-placeholder {
-  color: #999;
+  color: rgb(68, 68, 68);
 }
 .textarea:-ms-input-placeholder {
   color: #999;
 }
 .textarea::-ms-input-placeholder {
-  color: #999;
+  color: rgb(65, 65, 65);
 }
 .textarea::placeholder {
-  color: #999;
+  color: rgb(117, 117, 117);
 }
 /*~
   name: Textarea Transparent
@@ -5042,11 +5043,12 @@ h4, h5, h6 {
   padding-left: 0;
   padding-right: 0;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: bold;
   border-radius: 4px;
   border: none;
   background-color: transparent;
-  color: #1f1f21;
+  font-family:  'Yomogi', cursive;
+  color: #ffffff;
   letter-spacing: 0;
   box-shadow: none;
   -webkit-appearance: none;
@@ -5060,16 +5062,16 @@ h4, h5, h6 {
   pointer-events: none;
 }
 .textarea--transparent::-webkit-input-placeholder {
-  color: #999;
+  color: rgb(75, 75, 75);
 }
 .textarea--transparent:-ms-input-placeholder {
-  color: #999;
+  color: rgb(71, 71, 71);
 }
 .textarea--transparent::-ms-input-placeholder {
-  color: #999;
+  color: rgb(82, 82, 82);
 }
 .textarea--transparent::placeholder {
-  color: #999;
+  color: rgba(116, 116, 116, 0.589);
 }
 /*~
   name: Dialog
