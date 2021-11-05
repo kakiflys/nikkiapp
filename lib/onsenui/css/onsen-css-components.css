@@ -57,11 +57,13 @@ left:0;
     margin:auto;
  }
  .leaf2{
+   resize: none;
+   box-sizing: border-box;
    width:90%;
 position:absolute;
 left:0;
     right:0;
-    top: 30%;
+    top: 34%;
     bottom:50%;
     margin:auto;
  }
@@ -77,7 +79,7 @@ left:0;
 position:absolute;
 left:0;
     right:0;
-    top: 30%;
+    top: 34%;
     bottom:50%;
     margin:auto;
  }
@@ -3462,6 +3464,10 @@ h4, h5, h6 {
     </ul>
 */
 .list {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
   padding: 0;
   margin: 0;
   font: inherit;
@@ -3469,8 +3475,7 @@ h4, h5, h6 {
   background: transparent;
   line-height: normal;
   cursor: default;
-  margin-left: 80px;
-  margin-right: 80px;
+  
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;

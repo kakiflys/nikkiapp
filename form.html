@@ -18,7 +18,7 @@
       </p>
       <div class="leaf2">
        <p>
-   <img src="lib/onsenui/image/leaf.png" alt="ロゴ" width="70%" height="70%">
+   <img src="lib/onsenui/image/leaf.png" alt="ロゴ" width="300px" height="120px">
  </p>
       </div>
       <!--
@@ -88,13 +88,13 @@ report
   // objectIdがない = 新規作成 の場合はsave
 // objectIdがある = 更新 の場合はupdate
 const method = report.objectId ? 'update' : 'save';
-const message = method === 'save' ? '作成' : '更新';
+const message = method === 'save' ? '投稿' : '更新';
 // 新規作成または更新を実行
 try {
   await report[method]();
-  ons.notification.alert(`日記の${message}に成功しました`);
+  ons.notification.alert(`イイコトの${message}に成功しました`);
 } catch (e) {
-  ons.notification.alert(`日記の${message}に失敗しました`);
+  ons.notification.alert(`イイコトの${message}に失敗しました`);
 }
       });
       const user = ncmb.User.getCurrentUser(); // ここを書き換えます
@@ -127,7 +127,7 @@ try {
   return report.objectId ? report : new Report();
 }
 ons.getScriptPage().onShow = async function() {
-  $('#form-title').html('日記を書く');
+  $('#form-title').html('イイコトを書く');
   const date = new Date(dayjs().format('YYYY-MM-DD'));
   $('#day').val(dayjs(date).format('YYYY-MM-DD'));
   const report = await findOrCreate(date);
