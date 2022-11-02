@@ -1,6 +1,6 @@
-const applicationKey = '617fa29d800dd09b014b8ab9f6d11228bdd2b4f5c47b8d86e13724118505d112';
-const clientKey = 'e9e73ea6d3567fb73d163aca0a0ff8d5288c87fbad48614bb7d8215788fc2c4a';
-const ncmb = new NCMB(applicationKey, clientKey);
+const applicationKey = 'dcdbc15ed7d1c475bbdeca82babca1f81612cf373ae97bc98ed2a7f02b21a9cb';
+const clientKey = 'c19bee46f05ec731c10a86a0cde8f76455b60f521b41412132537d64d68a5459';
+var ncmb = new NCMB(applicationKey, clientKey);
 
 function onLogoutButton() {
     // ログアウト
@@ -22,6 +22,18 @@ function start(){
 window.location.href = 'index2.html';
 //location.reload();
 }
+
+function qr(){
+  
+window.location.href = 'qrdemo.html';
+//location.reload();
+}
+function form(){
+  
+window.location.href = 'index2.html';
+//location.reload();
+}
+
 function setsu(){
   
 window.location.href = 'setsumei.html';

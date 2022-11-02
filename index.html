@@ -13,9 +13,9 @@
   <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
   <link rel="stylesheet" href="css/style.css">
-
+<script src="js/app.js"></script>
   <script>
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js";
+    
 // Import the functions you need from the SDKs you need
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -34,8 +34,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
+
 
     ons.ready(function() {
       console.log("Onsen UI is ready!");
@@ -123,14 +123,94 @@ ons.disableAutoStyling()
 <body>
   <ons-page>
 
-   
+      <!--
+<html>
+    <body bgcolor="#0EE00E">
+    <h1>バーコード生成アプリ</h1>
+<p style="font-size:12px;">※ 入力チェックは行っていません<br>
+※ QRコードは(株)デンソーウェーブの登録商標です
+</p>
+
+    文字：<input type="text" id="text"><br>
+    種類：
+    <select id="format">
+        <option value="qrcode">QRコード</option>
+        <option value="CODE39">CODE39</option>
+        <option value="EAN13">JAN13・ISBNなど</option>
+        <option value="EAN8">EAN-8</option>
+        <option value="ITF">ITF</option>
+    </select><br>
+    <input type="button" value="生成" onclick="generate()">
+    <h2>コード</h2>
+    <div id="qrcode"></div>
+    <img id="barcode"></div>
+</body>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="qrcode.min.js"></script>
+    <script src="JsBarcode.all.min.js"></script>
+    <script>
+        function generate() {
+            let qrcode = document.getElementById("qrcode");
+            let barcode = document.getElementById("barcode");
+            let text = document.getElementById("text").value;
+            let format = document.getElementById("format").value;
+            if (format == "qrcode") {
+                qrcode.innerHTML = null;
+                new QRCode(
+                        qrcode, {
+                            text: text,
+                            width: 128,
+                            height: 128,
+                            colorDark : "#000000",
+                            colorLight : "#ffffff",
+                            correctLevel : QRCode.CorrectLevel.H
+                });
+                
+
+                qrcode.style.display = "block";
+                barcode.style.display = "none";
+            } else {
+                JsBarcode(
+                    "#barcode", 
+                    text, 
+                    {
+                        format: format,
+                        lineColor: "#000",
+                        width:2,
+                        height:100,
+                        displayValue: true
+                    });
+                qrcode.style.display = "none";
+                barcode.style.display = "block";
+
+            }
+        }
+    </script>
+</head>
+
+</html>
+   -->
+
+
+   <ons-button onclick="qr()">qrにGO</ons-button>
+  
+  
     <ons-navigator var="myNavigator" page="toppage.html" active>
 </ons-navigator>
+
+
   </ons-page>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
   <script src="js/ncmb.min.js"></script>
-  <script src="js/app.js"></script>
+  
   
 </body>
 </html>

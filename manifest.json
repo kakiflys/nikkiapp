@@ -1,7 +1,7 @@
 {
-    "name": "nikkiapp",
-    "short_name": "nikkiapp",
-    "description": "This is a PWA Minimum Template",
+    "name": null,
+    "short_name": null,
+    "description": null,
     "icons": [
         {
             "src": "images/icons/icon-48x48.png",
@@ -49,12 +49,12 @@
             "type": "image/png"
         }
     ],
-    "lang": "en",
-    "dir": "ltr",
-    "scope": "./",
-    "start_url": "index.html",
-    "display": "standalone",
-    "orientation": "any",
-    "background_color": "#00629d",
-    "theme_color": "#00629d"
+    "lang": null,
+    "dir": null,
+    "scope": null,
+    "start_url": null,
+    "display": null,
+    "orientation": null,
+    "background_color": null,
+    "theme_color": null
 }

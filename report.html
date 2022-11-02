@@ -61,8 +61,8 @@
         viewReports(reports);
       })
     }
-    var GameScore = ncmb.DataStore("Report");
-GameScore
+    var reponum = ncmb.DataStore("Report");
+reponum
          .count()
          .fetchAll()
          .then(function(results){

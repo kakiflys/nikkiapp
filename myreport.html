@@ -33,8 +33,10 @@
   </div>
   <script>
     ons.getScriptPage().onInit = async function() {
+        console.log('hi');
       // 日報を閲覧するボタンを押した時の処理
       $('#view-reportm').on('click', async e => {
+          console.log('hihi');
         // 検索対象の日付を取得
         //const day = new Date($('#date').val());
         //const categorym =$('[id=catem] option:selected').text(); 
@@ -51,9 +53,9 @@
 
     }
 */
-var GameScore2 = ncmb.DataStore("Report");
+var reponum2 = ncmb.DataStore("Report");
 const usermy = ncmb.User.getCurrentUser();
-GameScore2.equalTo('userName',usermy.get('userName'))
+reponum2.equalTo('userName',usermy.get('userName'))
          .count()
          .fetchAll()
          .then(function(results2){
@@ -126,6 +128,7 @@ const Reportm = ncmb.DataStore('Report');
         `)
       });
       $('#reportsm').html(htmlm.join(''));
+     console.log(reportsm);
     }
   </script>
 </ons-page>

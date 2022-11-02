@@ -391,7 +391,7 @@ h4, h5, h6 {
 }
 :checked + .switch__toggle {
   box-shadow: inset 0 0 0 2px #44db5e;
-  background-color: #44db5e;
+  background-color: #44db50;
 }
 :checked + .switch__toggle > .switch__handle {
   left: 21px;
@@ -4998,6 +4998,7 @@ h4, h5, h6 {
      -moz-appearance: none;
           appearance: none;
   width: auto;
+  
 }
 .textarea:disabled {
   opacity: 0.3;

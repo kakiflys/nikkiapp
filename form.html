@@ -1,4 +1,5 @@
 <ons-page>
+    
   <div class = "desk">
   <ons-navigator id="formNav">
     
@@ -16,6 +17,8 @@
       <p>
         <ons-input id="day" modifier="underbar" type="date" float></ons-input>
       </p>
+      <ons-button onclick="qr()">qrにGO</ons-button>
+      
       <div class="leaf2">
        <p>
    <img src="lib/onsenui/image/leaf.png" alt="ロゴ" width="250px" height="120px">
@@ -37,6 +40,7 @@
         <textarea id="report" class="textarea textarea--transparent" rows="3" maxlength="30" placeholder="今日の嬉しかったことや楽しかったこと、その時の思いを書きましょう"></textarea>
       
         </div>
+      
         <div class="toukou">
       <p style="margin-top: 20px;">
         <ons-button id="send-report">投稿する</ons-button>
@@ -49,22 +53,34 @@
 <a href="#" id="logoutButton">ログアウトする</a>
       </p>
       </div>
+     
+       
     </div>
     
   </ons-navigator>
   </div>
-  <head>
-    <script src="js/app.js"></script>
-    
-  </head>
+  
+
+
+
+
   <script>
+        
+    
+  
+
     
 $(function() {
         $("#logoutButton").click(onLogoutButton);
         });
+        
+        
+
 
     ons.getScriptPage().onInit = async function() {
       // 日報を登録するボタンを押した時の処理です
+
+      
       $('#send-report').on('click', async e => {
         // 情報の取得
         const date = new Date($('#day').val());
@@ -141,4 +157,5 @@ ons.getScriptPage().onShow = async function() {
 }
 
   </script>
+  
 </ons-page>
