@@ -141,7 +141,7 @@ try {
   const user = ncmb.User.getCurrentUser();
   const report = await Report
     .equalTo('userName', user.get('userName'))
-    .equalTo('day', date)
+    .equalTo('createDate', date)
     //.equalTo('category',category)
     .fetch();
   return report.objectId ? report : new Report();
