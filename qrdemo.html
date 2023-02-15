@@ -69,7 +69,7 @@ function viewReportsq(reportsq) {
       const htmlr = [];
       //html.push(`<ons-list-header>${dayjs(day).format('YYYY年MM月DD日の日報')}</ons-list-header>`)
       reportsq.forEach(qreport => {
-        htmlq.push(`${qreport.get('report').replace()} `)
+        htmlq.push(`${qreport.get('objectId').replace()} `)
       });
       const htmlco = htmlq.reverse();
       htmlr.push(`${htmlco[0]}`)
