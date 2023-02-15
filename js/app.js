@@ -1,5 +1,5 @@
-const applicationKey = 'dcdbc15ed7d1c475bbdeca82babca1f81612cf373ae97bc98ed2a7f02b21a9cb';
-const clientKey = 'c19bee46f05ec731c10a86a0cde8f76455b60f521b41412132537d64d68a5459';
+const applicationKey = '81545b16f5be72bb22435b9256468d15925f0c21b3f78fdc20cd45661aca06ae';
+const clientKey = 'fe6d2a8faab5542d18fba5aa93b2cf554187a07b866f38298cd44638d6891243';
 var ncmb = new NCMB(applicationKey, clientKey);
 
 function onLogoutButton() {
